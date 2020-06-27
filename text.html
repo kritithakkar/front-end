@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .card {
+
+            padding: 10px;
+            margin-top: 20px;
+            border: 0.5px solid gainsboro;
+            border-radius: 5px;
+        }
+
+        .vl {
+            border-left: 1px solid black;
+            height: 50px;
+            position: absolute;
+            left: 19%;
+            margin-left: -3px;
+            top: 35px;
+        }
+        .v2 {
+            border-left: 1px solid black;
+            height: 50px;
+            position: absolute;
+            left: 43%;
+            margin-left: -3px;
+            top: 35px;
+        }
+        .v3 {
+            border-left:1px solid black;
+            height: 50px;
+            position: absolute;
+            right: 27%;
+            margin-right: -3px;
+            top: 35px;
+        }
+        .v4 {
+            border-left: 1px solid black;
+            height: 50px;
+            position: absolute;
+            right: 28%;
+            margin-right: -6px;
+            top: 35px;
+        }
+        .leftcolumn {
+            float: left;
+            width: 100%;
+        }
+
+        .left {
+            float: left;
+            width: 55%;
+            
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .rightcolumn {
+  float: left;
+  width: 35%;
+  padding-left: 30px;
+ }
+ 
+ .chart-skills *,
+        .chart-skills::before {
+            box-sizing: border-box;
+        }
+
+
+        /* CHART-SKILLS STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        .chart-skills {
+            position: relative;
+            width: 350px;
+            height: 175px;
+            overflow: hidden;
+        }
+
+        .chart-skills::before,
+        .chart-skills::after {
+            position: absolute;
+        }
+
+        .chart-skills::before {
+            content: '';
+            width: inherit;
+            height: inherit;
+            border: 30px solid rgba(211, 211, 211, .3);
+            border-bottom: none;
+            border-top-left-radius: 175px;
+            border-top-right-radius: 175px;
+        }
+
+        .chart-skills::after {
+        
+            content: '76.7%';
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: ;rgb(0,0,0);
+        }
+
+        .chart-skills li {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            border: 30px solid;
+            border-top: none;
+            border-bottom-left-radius: 175px;
+            border-bottom-right-radius: 175px;
+            transform-origin: 50% 0;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            animation-fill-mode: forwards;
+            animation-duration: .4s;
+            animation-timing-function: linear;
+        }
+
+        .chart-skills li:nth-child(1) {
+            z-index: 4;
+            border-color: green;
+            animation-name: rotate-one;
+        }
+
+
+
+        .chart-skills span {
+            position: absolute;
+            font-size: .85rem;
+            backface-visibility: hidden;
+            animation: fade-in .4s linear forwards;
+        }
+
+        .chart-skills li:nth-child(1) span {
+            top: 5px;
+            left: 10px;
+            transform: rotate(-21.6deg);
+        }
+
+
+        /* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        @keyframes rotate-one {
+            100% {
+                transform: rotate(145deg);
+       
+            }
+        }
+ .fakeimg {
+  width: 80%;
+  padding:2%;
+}
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: white;
+}
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+       google.charts.load('current', {'packages':['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+
+
+      function drawStuff() {
+        var data = google.visualization.arrayToDataTable([
+        ["", "Density", { role: "style" } ],
+        ["Dec 21", 2755, "green"],
+        ["Dec 22", 2855, "green"],
+        ["Dec 23", 2896, "gold"],
+        ["Dec 24", 2885, "color: green"],
+        ["Dec 25", 2923, "green"],
+        ["Dec 26", 2976, "gold"],
+        ["Dec 27", 3001, "green"]
+      ]);
+
+        var options = {
+          width: 600,
+          colors: ['green'],
+          legend: { position: 'none' },
+          axes: {
+            y: {
+              0: { side: 'down',} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+</head>
+
+<body style="background-color: lavender;">
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" style="background-color: white;">
+                <ul>
+                    <li>
+                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Subscribers<br>
+                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5,097
+                        <div class="vl"></div>
+                    </li>
+
+                         <li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stream<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;47,403
+                    <div class="v2"></div>
+                 </li> 
+                 <li style="word-spacing: 15px;">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  Engagement Rate<br>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 25.81
+                   
+                 </li>
+                 <li style="word-spacing: 10px;">
+                  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   Avg.watch time<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  45,4 min
+                  <div class="v4"></div>
+
+                 </li>
+                </ul>
+              </div>
+              </div>
+              <div class="left">
+              <div class="card" style="background-color:white;">    
+                <p> Audience<br>
+                301,097<br>
+            </p>  
+            <div id="top_x_div" style="width: 600px; height: 300px;"></div>
+</div>
+<div class="card" style="background-color:white;">
+<pre>Popular episodes                                    <b style="color:green;">See all</b>
+   <input type="button" value="1"> <b> Kuji Podcast 33:Live </b>                 1,99m <b style="color:green;"> Live</b> 
+       Guest:Nurlan Saburov
+
+   <input type="button" value="2"> <b> Kuji Podcast 20:Live </b>                 1,54m <b style="color:green;"> Live</b>
+       Guest:Nurlan Saburav
+
+   <input type="button" value="3"> <b> Kuji Podcast 24:Live </b>                 1,04m <b style="color:green;"> Live</b>
+       Guest:Nurlan Saburav  
+</pre> 
+</div>
+</div>
+        <div class="rightcolumn">
+    <div class="card" style="background-color: white;">
+        <div class="fakeimg" style="background-color: white;">
+            <ul class="chart-skills">
+                <li>
+         <span></span>
+                </li>
+            </ul>
+            <div><pre>0%           Based on likes/dislikes        100%</pre> </div>
+            
+    </div>
+</div>
+<div class="card" style="background-color: green;">
+    <div class="fakeimg" style="background-color:green;">
+        <pre style="color:white; font-size: large;"><b>
+    Webinars               <button style="background-color: rgb(17, 168, 17); color:white;border:green; border-radius: 0.7px;">&#8230;</button>
+    Learn how you
+    can earn more then
+    20% each month!</b>
+    Join our webinar and learn how
+    to increase more then 20%
+    your monthly income
+    
+
+
+
+     Learn more
+</pre>
+        </div>
+        </div>
+</div>
+
+
+</body>
+
+</html>
